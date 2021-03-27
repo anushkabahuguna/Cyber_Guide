@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    this is the main card which has heading image and descriptin-->
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="11dp"
+    android:layout_marginRight="11dp"
+    android:layout_marginTop="7dp"
+    android:layout_marginBottom="7dp"
+    app:cardElevation="@dimen/cardview_default_elevation"
+    app:cardCornerRadius="10dp">
+<!--    inside RelativeLayout , image, heading, descriptin-->
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <!--       To make a screen transition animation between two activities that have a shared element:-->
+        <!--        Assign a common name to the shared elements in both layouts with the android:transitionName attribute.-->
+        <ImageView
+            android:id="@+id/img"
+            android:transitionName="img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/shadow_bottom"
+            android:src="@drawable/bottom_shadow"
+            android:layout_alignBottom="@id/img"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            tools:ignore="ContentDescription" />
+<!--        when image desnt load-->
+        <ProgressBar
+            android:id="@+id/progress_load_photo"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_marginTop="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+<!--      ellipsize:   ellipsize, a neologism, means to shorten text using an ellipsis, i.e.
+ three dots...
+ Say original value pf text view is aaabbbccc and its fitting inside the view start's output will be : ...bccc
+
+end's output will be : aaab...-->
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="match_parent"
+            android:drawablePadding="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:singleLine="true"
+            android:layout_marginEnd="160dp"
+            android:text="Author"
+            android:gravity="bottom"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignStart="@+id/title"
+            android:layout_alignRight="@+id/layoutDate"
+            android:layout_alignTop="@+id/layoutDate"
+            android:layout_alignEnd="@+id/layoutDate"
+            android:layout_height="30dp"
+            />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:background="@drawable/round_white"
+            android:padding="5dp"
+            android:layout_alignParentRight="true"
+            >
+        </FrameLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+</FrameLayout>

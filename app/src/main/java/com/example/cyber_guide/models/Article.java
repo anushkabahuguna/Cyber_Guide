@@ -1,4 +1,4 @@
-package com.example.cyber_guide.models;
+ package com.example.cyber_guide.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
